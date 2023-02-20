@@ -1,6 +1,10 @@
+// basic game logic
+// later idea is if there will be more than 2 player the board will have to be bigger 
+//but you can also have it as though if a player leaves their pieces diapear and rearrange the board
+
 // empty - 0
 // P1 - 1
-// p2 - 3
+// p2 - 2
 // might add more players for above and beyond
 let board = [];
 let boardSize = 15;

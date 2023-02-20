@@ -1,132 +1,135 @@
 #board
 {
+    /* 4*4 grid, will later be centered in the screen instead of taking the entire screen up */
     display: grid;
+    row-gap: 10px;
+    column-gap: 10px;
 }
 #cell0
 {
     display: block;
     grid-row: 1;
     grid-column: 1;
-    width: 25vw;
-    height: 25vh;
+    width: 24vw;
+    height: 24vh;
 }
 #cell1
 {
     display: block;
     grid-row: 1;
     grid-column: 2;
-    width: 25vw;
-    height: 25vh;
+    width: 24vw;
+    height: 24vh;
 }
 #cell2
 {
     display: block;
     grid-row: 1;
     grid-column: 3;
-    width: 25vw;
-    height: 25vh;
+    width: 24vw;
+    height: 24vh;
 }
 #cell3
 {
     display: block;
     grid-row: 1;
     grid-column: 4;
-    width: 25vw;
-    height: 25vh;
+    width: 24vw;
+    height: 24vh;
 }
 #cell4
 {
     display: block;
     grid-row: 2;
     grid-column: 1;
-    width: 25vw;
-    height: 25vh;
+    width: 24vw;
+    height: 24vh;
 }
 #cell5
 {
     display: block;
     grid-row: 2;
     grid-column: 2;
-    width: 25vw;
-    height: 25vh;
+    width: 24vw;
+    height: 24vh;
 }
 #cell6
 {
     display: block;
     grid-row: 2;
     grid-column: 3;
-    width: 25vw;
-    height: 25vh;
+    width: 24vw;
+    height: 24vh;
 }
 #cell7
 {
     display: block;
     grid-row: 2;
     grid-column: 4;
-    width: 25vw;
-    height: 25vh;
+    width: 24vw;
+    height: 24vh;
 }
 #cell8
 {
     display: block;
     grid-row: 3;
     grid-column: 1;
-    width: 25vw;
-    height: 25vh;
+    width: 24vw;
+    height: 24vh;
 }
 #cell9
 {
     display: block;
     grid-row: 3;
     grid-column: 2;
-    width: 25vw;
-    height: 25vh;
+    width: 24vw;
+    height: 24vh;
 }
 #cell10
 {
     display: block;
     grid-row: 3;
     grid-column: 3;
-    width: 25vw;
-    height: 25vh;
+    width: 24vw;
+    height: 24vh;
 }
 #cell11
 {
     display: block;
     grid-row: 3;
     grid-column: 4;
-    width: 25vw;
-    height: 25vh;
+    width: 24vw;
+    height: 24vh;
 }
 #cell12
 {
     display: block;
     grid-row: 4;
     grid-column: 1;
-    width: 25vw;
-    height: 25vh;
+    width: 24vw;
+    height: 24vh;
 }
 #cell13
 {
     display: block;
     grid-row: 4;
     grid-column: 2;
-    width: 25vw;
-    height: 25vh;
+    width: 24vw;
+    height: 24vh;
 }
 #cell14
 {
     display: block;
     grid-row: 4;
     grid-column: 3;
-    width: 25vw;
-    height: 25vh;
+    width: 24vw;
+    height: 24vh;
 }
 #cell15
 {
     display: block;
     grid-row: 4;
     grid-column: 4;
-    width: 25vw;
-    height: 25vh;
+    width: 24vw;
+    height: 24vh;
 }
