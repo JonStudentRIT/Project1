@@ -4,50 +4,47 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/style.css">
-    <script src="game.js" type="modual"></script>
-
     <title>430 Project 1</title>
-</head>
-<body>
-    <!-- game options and player icon -->
-    <!-- board will be centered -->
-    <div id="board">
-        <img id="cell0" src="Untitled.png" alt="">
-        <img id="cell1" src="Untitled.png" alt="">
-        <img id="cell2" src="Untitled.png" alt="">
-        <img id="cell3" src="Untitled.png" alt="">
-        <img id="cell4" src="Untitled.png" alt="">
-        <img id="cell5" src="Untitled.png" alt="">
-        <img id="cell6" src="Untitled.png" alt="">
-        <img id="cell7" src="Untitled.png" alt="">
-        <img id="cell8" src="Untitled.png" alt="">
-        <img id="cell9" src="Untitled.png" alt="">
-        <img id="cell10" src="Untitled.png" alt="">
-        <img id="cell11" src="Untitled.png" alt="">
-        <img id="cell12" src="Untitled.png" alt="">
-        <img id="cell13" src="Untitled.png" alt="">
-        <img id="cell14" src="Untitled.png" alt="">
-        <img id="cell15" src="Untitled.png" alt="">
-    </div>
-</body>
-</html>
-<!-- This section is intended for testing
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>430 Project 1</title>
+    <script>
+        const handleResponse = async (response) => {
+            const content = document.querySelector('#updateDisplay');
+            if (response.status === 200)
+            {
+                let obj = await response.json();
+                content.innerHTML = `${JSON.stringify(obj.message)}`;
+            }
+        };
+        const sendFetch = async (url) => {
+            let response = await fetch(url);
+            if(response.statusText != undefined)
+            {
+                handleResponse(response);
+            }
+        };
+        const sendPost = async () => {
+            let response = await fetch('/updateOut', {
+                method: 'post',
+                headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'Accept': 'application/json',
+                },
+                body: 'Button has been ticked',
+            });
+        }
+        
+        const init = async () => {
+            const update = document.querySelector('#updateButton');
+            update.addEventListener('click', () => {sendPost()});
+            // short polling at 1 sec
+            setTimeout(function run() {sendFetch('/getTick')}, 5000);
+        };
+        window.onload = init;
+        </script>
 </head>
 <body>
     <h1 id="updateDisplay">
 ---
     </h1>
-    <button id="UpdateButton"></button>
+    <button id="updateButton"></button>
 </body>
-<script>
-    
-</script>
-</html> -->
+</html>

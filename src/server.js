@@ -6,22 +6,25 @@ const jsonHandler = require('./jsonHandler.js');
 
 const port = process.env.PORT || process.env.NODE_PORT || 3000;
 
-//polling 
-//https://www.geeksforgeeks.org/what-is-long-polling-and-short-polling/
-//https://javascript.info/long-polling
 const urlStruct = {
-    POST: {},
+    POST: {
+      '/updateOut': jsonHandler.updateTick,
+    },
     GET: {
       '/': htmlHandler.getIndex,
+      '/getTick' : jsonHandler.getTick,
       '/style.css': htmlHandler.getCSS,
+      // '/Untitled.png' : 
     },
     HEAD: {},
 };
 
 const onRequest = (request, response) => {
   const parsedUrl = url.parse(request.url);
-  console.log(parsedUrl);
-  htmlHandler.getIndex(request, response);
+  if(urlStruct[request.method][parsedUrl.pathname])
+  {
+    urlStruct[request.method][parsedUrl.pathname](request, response);
+  }
 };
 
 http.createServer(onRequest).listen(port);
