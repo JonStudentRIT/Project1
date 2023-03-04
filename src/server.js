@@ -13,8 +13,8 @@ const urlStruct = {
     GET: {
       '/': htmlHandler.getIndex,
       '/getTick' : jsonHandler.getTick,
+      '/init' : jsonHandler.playerInit,
       '/style.css': htmlHandler.getCSS,
-      // '/Untitled.png' : 
     },
     HEAD: {},
 };
